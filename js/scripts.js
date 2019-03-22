@@ -1,5 +1,5 @@
 
-
+// array of dino info
 const dinos = [
   dino1 = {
     name: "Tyrannosaurusrex",
@@ -38,18 +38,33 @@ const dinos = [
   }
 ]
 
-$(document).ready(function() {
+//array of numbers
+const nums = [1,2,3,4,5,6,7,8,9];
+
+$(document).ready(() => {
+
+  //filter array of numbers for evens
+  let evens = nums.filter((num) => {
+    return num % 2 === 0
+  });
+
+  console.log(evens);
+
+  //search array of objects by the value of specific keys and make a new array with those that satisfy true
   function searchIt(arr, query1, query2) {
-    return arr.filter(function(dino) {
-      if ((dino.diet === query1) && (dino.period === query2)) {
-        return true;
-      } else {
-        return false;
-      }
+    return arr.filter((dino) => {
+      return (dino.diet === query1) && (dino.period === query2)
     });
   }
+
   console.log(searchIt(dinos, "herbivore", "Jurassic"));
+
+  //sort
+
+
 });
+
+
 
 
 
